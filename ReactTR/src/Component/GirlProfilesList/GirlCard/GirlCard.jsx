@@ -9,6 +9,11 @@ import {isFavorite, isLiked} from './Redux/girlsSlice';
 
 
 const GirlCard = ({girl, index}) => {
+    const [isBirthdaySoon, setIsBirthdaySoon] = useState(false);
+    const [isShow, setIsShow] = useState(false);
+    const [isConnection, setIsConnection] = useState(false)
+    const [day, month, year] = girl.birthday.split('.').map(Number);
+    const dateInMilliseconds = new Date(year, month - 1, day).getTime();
 
     const dispatch = useDispatch();
     let select  = new Set()
@@ -31,11 +36,7 @@ const GirlCard = ({girl, index}) => {
     }
 
 
-    const [isBirthdaySoon, setIsBirthdaySoon] = useState(false);
-    const [isShow, setIsShow] = useState(false);
-    const [isConnection, setIsConnection] = useState(false)
-    const [day, month, year] = girl.birthday.split('.').map(Number);
-    const dateInMilliseconds = new Date(year, month - 1, day).getTime();
+
     useEffect(() => {
         setIsBirthdaySoon(new Date(dateInMilliseconds).getDay() > new Date().getDay());
     }, [dateInMilliseconds]);
