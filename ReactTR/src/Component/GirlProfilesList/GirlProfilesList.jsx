@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import GirlCard from "./GirlCard/GirlCard";
 import classes from "./GirlProfilesList.module.scss"
 import {useDispatch, useSelector} from "react-redux";
@@ -7,6 +7,8 @@ import {sortList} from './GirlCard/Redux/girlsSlice';
 const GirlProfilesList = () => {
     let girl = useSelector(state => state.girls.sortArray)
     const dispatch = useDispatch();
+
+
     useEffect(() => {
         dispatch(sortList('all'))
     }, []);
@@ -23,6 +25,10 @@ const GirlProfilesList = () => {
                 <a onClick={() => sortProfile('all')}>All</a>
                 <a onClick={() => sortProfile('favorite')}>Favorites</a>
                 <a onClick={() => sortProfile('sweet')}>Sweet</a>
+                <a>Without children</a>
+                <a>18+</a>
+                <a>24+</a>
+                <a>40+</a>
             </div>
             <div className={classes.wrapperCard}>
                 {girl.map((girl, index) => (

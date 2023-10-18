@@ -2,28 +2,31 @@ import React from 'react';
 import "./assets/index.css";
 import MainPage from "./Component/MainPage/MainPage";
 import GirlProfilesList from "./Component/GirlProfilesList/GirlProfilesList";
-import FindLoveComp from "./Component/FindLoveComp/FindLoveComp";
-import FeedbackSection from "./Component/FeedbackSection/FeedbackSection";
-import VideoChat from "./Component/VideoChat/VideoChat";
-import JoinSection from "./Component/JoinSection/JoinSection";
-import FooterSection from "./Component/FooterSection/FooterSection";
-import StatisticsSlider from "./Component/SimpleSlider/StatisticsSlider";
+
+// import FeedbackSection from "./Component/FeedbackSection/FeedbackSection";
+// import VideoChat from "./Component/VideoChat/VideoChat";
+// import JoinSection from "./Component/JoinSection/JoinSection";
+// import FooterSection from "./Component/FooterSection/FooterSection";
+import SimpleSlider from "./Component/SimpleSlider/SimpleSlider";
+import StatisticsSlider from "./Component/SimpleSlider/StatisticsSlider/StatisticsSlider";
+import TargetAddSlider from "./Component/SimpleSlider/TargetAddSlider/TargetAddSlider";
+
 
 
 function App() {
 
     return (
         <div>
-            <MainPage/>
+            {/*<MainPage/>*/}
             <div className={'container'}>
                 <StatisticsSlider/>
                 <GirlProfilesList/>
             </div>
-            <FindLoveComp/>
-            <FeedbackSection/>
-            <VideoChat/>
-            <JoinSection/>
-            <FooterSection/>
+            <TargetAddSlider/>
+            {/*<FeedbackSection/>*/}
+            {/*<VideoChat/>*/}
+            {/*<JoinSection/>*/}
+            {/*<FooterSection/>*/}
         </div>
     );
 }
