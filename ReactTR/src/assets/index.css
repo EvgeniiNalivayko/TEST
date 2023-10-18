@@ -7,9 +7,6 @@ body {
 .slick-dots li.slick-active button:before {
 color: #FFFFFF;
 }
-.slick-dots li button:before {
-    color: #FFFFFF;
-}
 
 * {
     box-sizing: border-box;

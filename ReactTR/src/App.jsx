@@ -10,6 +10,7 @@ import GirlProfilesList from "./Component/GirlProfilesList/GirlProfilesList";
 import SimpleSlider from "./Component/SimpleSlider/SimpleSlider";
 import StatisticsSlider from "./Component/SimpleSlider/StatisticsSlider/StatisticsSlider";
 import TargetAddSlider from "./Component/SimpleSlider/TargetAddSlider/TargetAddSlider";
+import FeedBackSlider from "./Component/SimpleSlider/FeedBackSlider/FeedBackSlider";
 
 
 
@@ -23,7 +24,7 @@ function App() {
                 <GirlProfilesList/>
             </div>
             <TargetAddSlider/>
-            {/*<FeedbackSection/>*/}
+            <FeedBackSlider/>
             {/*<VideoChat/>*/}
             {/*<JoinSection/>*/}
             {/*<FooterSection/>*/}
