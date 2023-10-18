@@ -16,7 +16,7 @@ const GirlCard = ({girl, index}) => {
     const dateInMilliseconds = new Date(year, month - 1, day).getTime();
 
     const dispatch = useDispatch();
-    let select  = new Set()
+    let select = new Set()
 
     const toggleFavorite = () => {
         if (girl.isFavorite && !girl.like) {
@@ -34,7 +34,6 @@ const GirlCard = ({girl, index}) => {
         }
 
     }
-
 
 
     useEffect(() => {
@@ -80,7 +79,9 @@ const GirlCard = ({girl, index}) => {
                     </div>
                     <div>
                         {girl.like && (
-                            <img onClick={toggleFavorite} src={like} alt="Like"/>
+                            <div className={classes.reactionContainer}>
+                                <img onClick={toggleFavorite} src={like} alt="Like"/>
+                            </div>
                         )}
                     </div>
                     {!isConnection
@@ -104,7 +105,8 @@ const GirlCard = ({girl, index}) => {
             )}
             {!isShow &&
                 <div className={classes.girlInfo}>
-                    <p>{girl.name}, <span>{new Date().getFullYear() - new Date(dateInMilliseconds).getFullYear()}</span></p>
+                    <p>{girl.name}, <span>{new Date().getFullYear() - new Date(dateInMilliseconds).getFullYear()}</span>
+                    </p>
 
                 </div>
             }
