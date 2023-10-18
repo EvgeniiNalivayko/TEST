@@ -1,0 +1,23 @@
+.wrapperFooter {
+  padding: 60px;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+
+  h2 {
+    text-align: center;
+  }
+
+  .flexContainer {
+    display: flex;
+
+    .column {
+      width: 50%;
+      flex: 1;
+      padding: 10px;
+    }
+  }
+
+}
