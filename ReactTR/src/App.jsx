@@ -4,9 +4,9 @@ import MainPage from "./Component/MainPage/MainPage";
 import GirlProfilesList from "./Component/GirlProfilesList/GirlProfilesList";
 
 // import FeedbackSection from "./Component/FeedbackSection/FeedbackSection";
-// import VideoChat from "./Component/VideoChat/VideoChat";
-// import JoinSection from "./Component/JoinSection/JoinSection";
-// import FooterSection from "./Component/FooterSection/FooterSection";
+import VideoChat from "./Component/VideoChat/VideoChat";
+import JoinSection from "./Component/JoinSection/JoinSection";
+import FooterSection from "./Component/FooterSection/FooterSection";
 import SimpleSlider from "./Component/SimpleSlider/SimpleSlider";
 import StatisticsSlider from "./Component/SimpleSlider/StatisticsSlider/StatisticsSlider";
 import TargetAddSlider from "./Component/SimpleSlider/TargetAddSlider/TargetAddSlider";
@@ -18,16 +18,16 @@ function App() {
 
     return (
         <div>
-            {/*<MainPage/>*/}
+            <MainPage/>
             <div className={'container'}>
                 <StatisticsSlider/>
                 <GirlProfilesList/>
             </div>
             <TargetAddSlider/>
             <FeedBackSlider/>
-            {/*<VideoChat/>*/}
-            {/*<JoinSection/>*/}
-            {/*<FooterSection/>*/}
+            <VideoChat/>
+            <JoinSection/>
+            <FooterSection/>
         </div>
     );
 }

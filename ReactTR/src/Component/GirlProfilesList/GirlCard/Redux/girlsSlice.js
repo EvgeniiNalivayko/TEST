@@ -89,25 +89,23 @@ export const girlsSlice = createSlice({
         isLiked: (state, {payload}) => {
             state.sortArray[payload].like = !state.sortArray[payload].like
         },
-        sortList: (state, {payload}) => {
-            if (payload === 'favorite') {
-                state.sortArray = state.list.filter(item => item.isFavorite && !item.like)
-
-            }
-            if (payload === 'sweet') {
-                state.sortArray = state.list.filter(item => item.isFavorite && item.like)
-            }
-            if (payload === 'all') {
-                state.sortArray.map((item) => {
-                    if (item.id === localStorage.gils.id) {
-                        item.isFavorite = localStorage.gils.isFavorite
-                        item.like = localStorage.gils.like
+        sortList: (state, action) => {
+            if (action.payload === 'favorite') {
+                state.sortArray = state.list.filter((girl) => girl.isFavorite && !girl.like);
+            } else if (action.payload === 'sweet') {
+                state.sortArray = state.list.filter((girl) => girl.isFavorite && girl.like);
+            } else if (action.payload === 'all') {
+                state.sortArray = state.list.map((girl) => {
+                    const localData = localStorage.getItem(`girls-${girl.id}`);
+                    if (localData) {
+                        const localGirl = JSON.parse(localData);
+                        return { ...girl, ...localGirl };
                     }
-                })
+                    return girl;
+                });
             }
-            state.sortArray = Object.assign(state.list, state.sortArray)
         },
-    }
+    },
 });
 
 export const {isFavorite, isLiked, sortList} = girlsSlice.actions;
